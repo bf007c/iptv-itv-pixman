@@ -48,7 +48,7 @@ jobs:
           echo "Resolving DNS name: $dns_name"
 
           # 只获取第一个非CNAME的IPv6地址
-          ip_address=$(dig +short "$dns_name" | grep "240" | head -n 1)
+          ip_address=$(dig +short "$dns_name" | grep 240 | head -n 1)
           
           echo "Resolved IP address: $ip_address"
 
