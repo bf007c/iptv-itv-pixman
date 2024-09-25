@@ -48,13 +48,13 @@ jobs:
           echo "Resolving DNS name: $dns_name"
 
           # 只获取第一个非CNAME的IPv6地址
-          ip_address=$(dig +short "$dns_name" | grep 240 | head -n 1)
+          ip_address=$(dig +short "$dns_name" | grep "240" | head -n 1)
           
           echo "Resolved IP address: $ip_address"
 
           # 检查是否得到了 IP 地址
           if [ -n "$ip_address" ]; then
-            echo "$ip_address $host" >> iptvhost
+            echo "$ip_address $host" >> iptvhost6
             echo "Updated iptvhost file with: $ip_address $host"
           else
             echo "Failed to resolve $dns_name"
@@ -66,9 +66,9 @@ jobs:
         echo "Staging changes..."
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
-        git add iptvhost
+        git add iptvhost6
         git status
-        cat iptvhost6  # 输出 iptvhost 文件内容以检查更新
+        cat iptvhost6  # 输出 iptvhost6 文件内容以检查更新
 
     - name: Commit changes  # 步骤：提交更改
       uses: stefanzweifel/git-auto-commit-action@v4
