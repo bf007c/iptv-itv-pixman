@@ -1,4 +1,4 @@
-name: process iptvhost6
+name: process iptvhost
 
 on:
   schedule:
@@ -37,8 +37,8 @@ jobs:
         )
 
         # 清空之前的 iptvhost 文件
-        echo "Clearing previous iptvhost6 file..."
-        > iptvhost6
+        echo "Clearing previous iptvhost file..."
+        > iptvhost
 
         # 解析 DNS 记录并更新 hosts 文件
         for i in "${!DNS_NAMES[@]}"; do
@@ -54,8 +54,8 @@ jobs:
 
           # 检查是否得到了 IP 地址
           if [ -n "$ip_address" ]; then
-            echo "$ip_address $host" >> iptvhost6
-            echo "Updated iptvhost6 file with: $ip_address $host"
+            echo "$ip_address $host" >> iptvhost
+            echo "Updated iptvhost file with: $ip_address $host"
           else
             echo "Failed to resolve $dns_name"
           fi
@@ -66,12 +66,12 @@ jobs:
         echo "Staging changes..."
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
-        git add iptvhost6
+        git add iptvhost
         git status
-        cat iptvhost6  # 输出 iptvhost6 文件内容以检查更新
+        cat iptvhost  # 输出 iptvhost 文件内容以检查更新
 
     - name: Commit changes  # 步骤：提交更改
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Update iptvhost6
+        commit_message: Update iptvhost
         branch: main
