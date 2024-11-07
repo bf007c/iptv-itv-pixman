@@ -1,4 +1,4 @@
-name: process iptvhost
+name: process ip4
 
 on:
   schedule:
