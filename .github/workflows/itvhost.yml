@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Set DNS
       run: |
-        echo "nameserver 119.29.29.29" | sudo tee /etc/resolv.conf > /dev/null
+        echo "nameserver 223.5.5.5" | sudo tee /etc/resolv.conf > /dev/null
     - name: Checkout repository
       uses: actions/checkout@v3
 
@@ -21,11 +21,11 @@ jobs:
         set -x  # 启用调试模式
         # 定义 DNS 名称和对应的 host 文件内容
         DNS_NAMES=(
-          'pixman.io.ystenlive.dnsany.com'
-          'pixman.io.bestlive.dnsany.com'
-          'pixman.io.wasulive.dnsany.com'
-          'pixman.io.fifalive.dnsany.com'
-          'pixman.io.hnbblive.dnsany.com'
+          'miguvideo-yw.e.cdn.chinamobile.com'
+          'miguvideo-yw.e.cdn.chinamobile.com'
+          'miguvideo-yw.e.cdn.chinamobile.com'
+          'miguvideo-yw.e.cdn.chinamobile.com'
+          'miguvideo-yw.e.cdn.chinamobile.com'
         )
 
         HOSTS_MAPPING=(
