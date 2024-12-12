@@ -21,11 +21,11 @@ jobs:
         set -x  # 启用调试模式
         # 定义 DNS 名称和对应的 host 文件内容
         DNS_NAMES=(
-          'miguvideo-yw.e.cdn.chinamobile.com'
-          'miguvideo-yw.e.cdn.chinamobile.com'
-          'miguvideo-yw.e.cdn.chinamobile.com'
-          'miguvideo-yw.e.cdn.chinamobile.com'
-          'miguvideo-yw.e.cdn.chinamobile.com'
+          'base-v4v6-cm-miguvideo.e.cdn.chinamobile.com'
+          'base-v4v6-cm-miguvideo.e.cdn.chinamobile.com'
+          'base-v4v6-cm-miguvideo.e.cdn.chinamobile.com'
+          'base-v4v6-cm-miguvideo.e.cdn.chinamobile.com'
+          'base-v4v6-cm-miguvideo.e.cdn.chinamobile.com'
         )
 
         HOSTS_MAPPING=(
